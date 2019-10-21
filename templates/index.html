@@ -1,0 +1,51 @@
+<head>
+	<script>
+		var HELP_TEXT = "{{ help_text }}";
+        var NOT_FOUND_TEXT = "{{ not_found_text }}";
+		var ERROR_TEXT = "{{ error_text }}";
+        var PRIVATE_TEXT = "{{ private_text }}";
+
+		var POST_SITE = "{{ url_for('posts') }}";
+		var HEART_ICON = "{{ url_for('static', filename='img/heart.png') }}";
+	</script>
+
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/instagram.js') }}"></script>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"></link>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"></link>
+    
+    <title>{{ name }}</title>
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <a class="navbar-brand" href="#">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" width="30" height="30" alt="">
+    </a>
+
+    <a class="navbar-brand" href="#">{{ name }}</a>
+
+	<div class="input-group" style="width: 400px">
+		<div class="input-group-prepend">
+			<span class="input-group-text" id="basic-addon1">@</span>
+		</div>
+
+		<input id="user" type="text" name="user" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+	</div>
+
+	<button id="go" class="btn btn-outline-success my-2 my-sm-0" style="margin-left: 10px;">Go</button>
+</nav>
+
+<div id="content">
+	<div id="help" class="alert alert-info notif">
+		{{ help_text }}
+	</div>
+
+	<div id="loader" hidden="true">
+		<div class="spinner-border text-secondary spinner-border-sm" role="status"></div>
+		<span>Loading posts...</span>
+	</div>
+
+	<div id="posts"></div>
+</div>

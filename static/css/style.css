@@ -1,0 +1,25 @@
+body {
+    margin-left: 25px;
+}
+
+.post {
+	object-fit: cover;
+	width:200px;
+	height:200px;
+}
+  
+#content {
+	margin-top: 81px;
+}
+
+#user {
+	width: 350px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.notif {
+	width: 450px;
+}
